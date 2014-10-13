@@ -1,0 +1,21 @@
+#first {
+	text-align: left;
+	position: relative;
+}
+
+#first::after {
+	position: absolute;
+	top: 0;
+	right: 0;
+	content: '';
+	background: url(../img/fxoslogo.png) no-repeat right 0/400px;
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+
+img.none {
+	border: 0 !important;
+	background: none !important;
+	box-shadow: none !important;
+}
