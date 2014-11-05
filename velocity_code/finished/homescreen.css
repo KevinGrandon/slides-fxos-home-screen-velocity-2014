@@ -6,3 +6,7 @@ body {
 	width: 30%;
 	background-size: 100%;
 }
+
+brick-flipbox * {
+	pointer-events: none;
+}

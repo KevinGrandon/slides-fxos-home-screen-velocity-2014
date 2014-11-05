@@ -1,21 +1,9 @@
 var iconMap = new WeakMap();
 
-/**
-<brick-flipbox>
-  <div>Front</div>
-  <div>Back</div>
-</brick-flipbox>
- */
 function renderIcon(icon) {
-	var iconSrc = icon.icon;
-
-	var tile = document.createElement('brick-flipbox');
-	tile.innerHTML = `
-<brick-flipbox>
-  <div><img src="${iconSrc}"></div>
-  <div>Back</div>
-</brick-flipbox>
-`;
+	var tile = document.createElement('img');
+	tile.className = 'tile';
+	tile.src = icon.icon;
 
 	iconMap.set(tile, icon);
 
