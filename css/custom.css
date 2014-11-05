@@ -19,3 +19,8 @@ img.none {
 	background: none !important;
 	box-shadow: none !important;
 }
+
+html.fxos-banner body .slide-background {
+	background: url(../img/fxos-banner-large.png) no-repeat;
+	background-size: cover;
+}
