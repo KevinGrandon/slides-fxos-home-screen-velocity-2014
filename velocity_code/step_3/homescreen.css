@@ -1,0 +1,12 @@
+body {
+	background: #008999;
+}
+
+.tile {
+	width: 30%;
+	background-size: 100%;
+}
+
+brick-flipbox * {
+	pointer-events: none;
+}

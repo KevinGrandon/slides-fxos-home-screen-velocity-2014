@@ -1,0 +1,10 @@
+{
+	"name": "velocity screen",
+	"launch_path": "/index.html",
+	"role": "homescreen",
+	"type": "privileged",
+	"permissions": {
+		"systemXHR": true,
+		"webapps-manage": "true"
+	}
+}
