@@ -24,3 +24,8 @@ html.fxos-banner body .slide-background {
 	background: url(../img/fxos-banner-large.png) no-repeat;
 	background-size: cover;
 }
+
+html.san-francisco body .slide-background {
+	background: url(../img/sanfrancisco.jpg) no-repeat;
+	background-size: cover;
+}
