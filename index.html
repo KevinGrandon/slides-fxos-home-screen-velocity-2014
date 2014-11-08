@@ -54,17 +54,24 @@
 					</aside>
 				</section>
 
-				<section data-state="san-francisco"></section>
+				<section data-state="san-francisco">
+					<aside class="notes">
+						
+					</aside>
+				</section>
 
 				<section>
 					<img src="img/sf-fog.jpg" alt="">
+					<aside class="notes">
+						But generally it looks more like this, covered in fog.
+					</aside>
 				</section>
 				
 
 				<section>
 					<img src="img/sf-moz-office.jpg" alt="">
 					<aside class="notes">
-						I'm coming to you today from San Francisco. It's a city known for the lovely golden gate bridge, fog, and tech hipsters. Here's a picture of our office.
+						Here's our San Francisco office. In front of it there's a monument with the names of all of our employees, and our open source contributors.
 					</aside>
 				</section>
 
@@ -130,6 +137,27 @@
 					<h2>Replaceable Home Screens</h2>
 					<aside class="notes">
 						One of the great upcoming features in FirefoxOS is the concept of replaceable home screens. You can fully make your phone your own, by creating your own home screen in javascript. This is a feature we're currently working on and is expected to ship in our next release.
+					</aside>
+				</section>
+
+				<section>
+					<h2>WebAPI - Hardware Access</h2>
+					<pre><code class="javascript">
+var battery = navigator.battery;
+
+function updateBatteryStatus() {
+  console.log("Battery status: " + battery.level * 100 + " %");
+
+  if (battery.charging) {
+    console.log("Battery is charging");
+  }
+}
+
+battery.addEventListener("chargingchange", updateBatteryStatus);
+battery.addEventListener("levelchange", updateBatteryStatus);
+						</code></pre>
+					<aside class="notes">
+						So how does your code interact with the phone hardware? We use a number of new API methods which we're currently trying to standardize. Some of these methods might allow you to take a picture with the camera, or read the contacts from the device.
 					</aside>
 				</section>
 
