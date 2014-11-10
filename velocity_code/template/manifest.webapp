@@ -2,7 +2,7 @@
 	"name": "velocity screen",
 	"launch_path": "/index.html",
 	"role": "homescreen",
-	"type": "certified",
+	"type": "privileged",
 	"permissions": {
 		"systemXHR": true,
 		"webapps-manage": "true"
