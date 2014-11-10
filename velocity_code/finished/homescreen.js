@@ -9,8 +9,8 @@ function renderIcon(icon) {
 
 	var iconPath = icon.icon;
 	tile.innerHTML = `
-		<div style="background-image: url(${iconPath});" class="front"></div>
-		<div class="back"></div>`;
+		<div style="background-image: url(${iconPath});" class="back"></div>
+		<div class="front"></div>`;
 
 	container.appendChild(tile);
 }
@@ -22,17 +22,30 @@ function shuffleDom() {
 }
 
 FxosApps.all().then(icons => {
-    icons.forEach(icon => {
-    	renderIcon(icon);
-    });
-    shuffleDom();
+	icons.forEach(icon => {
+		renderIcon(icon);
+		renderIcon(icon);
+	});
+	shuffleDom();
 });
 
 window.addEventListener('click', function(e) {
 	var icon = iconMap.get(e.target);
+
+	var other = container.querySelector('.flipped');
 	e.target.classList.add('flipped');
-	setTimeout(() => {
+
+	if (!other) {
+		return;
+	}
+
+	setTimeout(function() {
+		if (icon == iconMap.get(other)) {
+			icon.launch();
+			shuffleDom();
+		}
+
 		e.target.classList.remove('flipped');
-		icon.launch();
-	}, 1000)
+		other.classList.remove('flipped');
+	}, 2000);
 });

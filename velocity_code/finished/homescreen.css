@@ -27,15 +27,14 @@ body {
 	height: 100%;
 	position: absolute;
 	top: 0;
-	background-size: 200px;
+	background-size: 200px 200px;
+	background-image: url(face.jpg);
 	background-repeat: no-repeat;
 	backface-visibility: hidden;
 	background-position: center;
-	will-change: transform;
 }
 
 .tile .back {
 	display: block;
 	transform: rotateY(180deg);
-	background: #0000ff;
 }
