@@ -1,8 +1,13 @@
+var container = document.body;
+
 function renderIcon(icon) {
-	var tile = document.createElement('img');
+	var tile = document.createElement('div');
 	tile.className = 'tile';
-	tile.src = icon.icon;
-	document.body.appendChild(tile);
+
+	var iconPath = icon.icon;
+	tile.innerHTML = `<div style="background-image: url(${iconPath});"></div>`;
+
+	container.appendChild(tile);
 }
 
 FxosApps.all().then(icons => {
