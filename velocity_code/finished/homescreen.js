@@ -31,8 +31,8 @@ FxosApps.all().then(icons => {
 
 window.addEventListener('click', function(e) {
 	var icon = iconMap.get(e.target);
-
 	var other = container.querySelector('.flipped');
+
 	e.target.classList.add('flipped');
 
 	if (!other) {
