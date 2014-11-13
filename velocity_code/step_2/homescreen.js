@@ -1,13 +1,16 @@
 var iconMap = new WeakMap();
+var container = document.body;
 
 function renderIcon(icon) {
-	var tile = document.createElement('img');
+	var tile = document.createElement('div');
 	tile.className = 'tile';
-	tile.src = icon.icon;
 
 	iconMap.set(tile, icon);
 
-	document.body.appendChild(tile);
+	var iconPath = icon.icon;
+	tile.innerHTML = `<div style="background-image: url(${iconPath});"></div>`;
+
+	container.appendChild(tile);
 }
 
 FxosApps.all().then(icons => {
@@ -20,3 +23,4 @@ window.addEventListener('click', function(e) {
 	var icon = iconMap.get(e.target);
 	icon.launch();
 });
+
