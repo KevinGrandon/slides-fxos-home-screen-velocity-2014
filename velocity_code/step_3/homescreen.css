@@ -8,6 +8,8 @@ body {
 	height: 300px;
 	min-width: 220px;
 	flex-grow: 1;
+	transform-style: preserve-3d;
+	transition: all 0.25s linear;
 }
 
 .tile > div {
@@ -17,4 +19,13 @@ body {
 	background-repeat: no-repeat;
 	background-position: center;
 	pointer-events: none;
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	background-image: url(face.jpg);
+}
+
+.tile .back,
+.tile.flipped {
+	transform: rotateY(180deg);
 }

@@ -12,10 +12,6 @@ body {
 	transition: all 0.25s linear;
 }
 
-.tile.flipped {
-	transform: rotateY(180deg);
-}
-
 .tile > div {
 	width: 100%;
 	height: 100%;
@@ -23,12 +19,13 @@ body {
 	background-repeat: no-repeat;
 	background-position: center;
 	pointer-events: none;
+	backface-visibility: hidden;
 	position: absolute;
 	top: 0;
 	background-image: url(face.jpg);
-	backface-visibility: hidden;
 }
 
-.tile .back {
+.tile .back,
+.tile.flipped {
 	transform: rotateY(180deg);
 }
