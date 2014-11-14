@@ -5,36 +5,27 @@ body {
 }
 
 .tile {
-	width: 200px;
 	height: 300px;
-	min-width: 200px;
-	display: inline-block;
+	min-width: 220px;
 	flex-grow: 1;
 	transform-style: preserve-3d;
 	transition: all 0.25s linear;
 }
 
-.tile.flipped {
-	transform: rotateY(180deg);
-}
-
-.tile * {
-	pointer-events: none;
-}
-
-.tile .front, .tile .back {
+.tile > div {
 	width: 100%;
 	height: 100%;
-	position: absolute;
-	top: 0;
 	background-size: 200px 200px;
 	background-repeat: no-repeat;
-	backface-visibility: hidden;
 	background-position: center;
+	pointer-events: none;
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	background-image: url(face.jpg);
 }
 
-.tile .back {
-	display: block;
+.tile .back,
+.tile.flipped {
 	transform: rotateY(180deg);
-	background: #0000ff;
 }

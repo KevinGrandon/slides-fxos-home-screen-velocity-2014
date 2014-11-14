@@ -130,13 +130,25 @@
 				</section>
 
 				<section>
+					<h3>2.0 vertical home screen</h3>
 					<img src="img/home-screen-new.jpg" alt="">
+					<aside class="notes">
+						And here's our 2.0 vertical home screen. It's veritcally scrolling and has larger, more visual icons. Vertically scrolling important because of edge gestures.
+					</aside>
 				</section>
 
 				<section>
 					<h2>Replaceable Home Screens</h2>
 					<aside class="notes">
 						One of the great upcoming features in FirefoxOS is the concept of replaceable home screens. You can fully make your phone your own, by creating your own home screen in javascript. This is a feature we're currently working on and is expected to ship in our next release.
+					</aside>
+				</section>
+
+				<section>
+					<h2>How does it work?</h2>
+					<img src="img/gears.jpg" alt="">
+					<aside class="notes">
+						How does it all work? WebAPIs allow access to the hardware.
 					</aside>
 				</section>
 
@@ -160,6 +172,23 @@ battery.addEventListener("levelchange", updateBatteryStatus);
 						So how does your code interact with the phone hardware? We use a number of new API methods which we're currently trying to standardize. Some of these methods might allow you to take a picture with the camera, or read the contacts from the device.
 					</aside>
 				</section>
+
+				<section>
+					<h2>WebAPI - Applications</h2>
+					<pre><code class="javascript">
+var request = window.navigator.mozApps.getAll();
+request.onsuccess = function(evt) {
+	var apps = evt.target.result;
+	// Render some apps.
+
+	// Uninstall an app:
+	apps[0].uninstall();
+};
+					</code></pre>
+					<aside class="notes">
+						Here's how a home screen would access the apps of a device, using the mozapps webapi.
+					</aside>
+				</section>				
 
 				<section>
 					<img height="600" src="img/meme-what-if-i-told-you.png">
