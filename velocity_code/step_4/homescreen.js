@@ -32,7 +32,7 @@ window.addEventListener('click', function(e) {
 	var icon = iconMap.get(e.target);
 	e.target.classList.add('flipped');
 	setTimeout(() => {
-		e.target.classList.remove('flipped');
 		icon.launch();
+		e.target.classList.remove('flipped');
 	}, 1000)
 });

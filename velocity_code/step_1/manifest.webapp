@@ -5,6 +5,6 @@
 	"type": "certified",
 	"permissions": {
 		"systemXHR": true,
-		"webapps-manage": "true"
+		"webapps-manage": true
 	}
 }

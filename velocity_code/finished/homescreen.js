@@ -1,37 +1,35 @@
-var iconMap = new WeakMap();
 var container = document.body;
+var iconMap = new WeakMap();
 
 function renderIcon(icon) {
 	var tile = document.createElement('div');
 	tile.className = 'tile';
 
-	iconMap.set(tile, icon);
-
 	var iconPath = icon.icon;
 	tile.innerHTML = `
-		<div style="background-image: url(${iconPath});" class="back"></div>
+		<div class="back" style="background-image: url(${iconPath});"></div>
 		<div class="front"></div>`;
+
+	iconMap.set(tile, icon);
 
 	container.appendChild(tile);
 }
 
-function shuffleDom() {
-	for (var i = container.children.length - 1; i > 0; i--) {
-		container.appendChild(container.children[Math.random() * i | 0]);
-	}
-}
-
 FxosApps.all().then(icons => {
-	icons.forEach(icon => {
-		renderIcon(icon);
-		renderIcon(icon);
-	});
-	shuffleDom();
+
+	icons = icons.concat(icons);
+
+	icons.sort(() => { return 0.5 - Math.random() });
+
+    icons.forEach(icon => {
+    	renderIcon(icon);
+    });
 });
 
 window.addEventListener('click', function(e) {
+
+    var other = container.querySelector('.flipped');
 	var icon = iconMap.get(e.target);
-	var other = container.querySelector('.flipped');
 
 	e.target.classList.add('flipped');
 
@@ -39,13 +37,11 @@ window.addEventListener('click', function(e) {
 		return;
 	}
 
-	setTimeout(function() {
-		if (icon == iconMap.get(other)) {
+	setTimeout(() => {
+		if (icon === iconMap.get(other)) {
 			icon.launch();
-			shuffleDom();
 		}
-
 		e.target.classList.remove('flipped');
-		other.classList.remove('flipped');
+        other.classList.remove('flipped');
 	}, 2000);
 });

@@ -13,5 +13,5 @@ body {
 .tile > div {
 	width: 100%;
 	height: 100%;
-	background: #fff center/200px no-repeat;
+	background: none center center/200px 200px no-repeat;
 }
