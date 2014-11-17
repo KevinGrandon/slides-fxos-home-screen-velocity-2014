@@ -50,18 +50,18 @@
 					<p>Kevin Grandon</p>
 					<p>@kevining</p>
 					<aside class="notes">
-						Hello and welcome. my name is Kevin Grandon. I work for Mozilla, and I'm a software engineer building FirefoxOS.
+						So who am I? My name is Kevin Grandon. I work for Mozilla, and I'm a software engineer working on FirefoxOS.
 					</aside>
 				</section>
 
 				<section data-state="san-francisco">
 					<aside class="notes">
-						
+						I'm coming here today from beautiful San Francisco.
 					</aside>
 				</section>
 
 				<section>
-					<img src="img/sf-fog.jpg" alt="">
+					<img class="light" src="img/sf-fog.jpg" alt="">
 					<aside class="notes">
 						But generally it looks more like this, covered in fog.
 					</aside>
@@ -69,23 +69,23 @@
 				
 
 				<section>
-					<img src="img/sf-moz-office.jpg" alt="">
+					<img class="light" height="680" src="img/sf-moz-office.jpg" alt="">
 					<aside class="notes">
-						Here's our San Francisco office. In front of it there's a monument with the names of all of our employees, and our open source contributors.
+						Here's the Mozilla San Francisco office. In front of it there's a monument with the names of all of our employees, and our open source contributors.
 					</aside>
 				</section>
 
 				<section data-state="fxos-banner">
 					<!--h2>What is FirefoxOS?</h2-->
 					<aside class="notes">
-						FxOS is an open source mobile operating system by Mozilla.
+						I'm here today to talk to you about FxOS. My talk has changed significantly since the original proposal and is more technical in nature. We'll spend a few minutes chatting about what we're doing with FirefoxOS, then the majority of the talk will be some live coding examples. Who's heard of FxOS? FxOS is an open source mobile operating system by Mozilla.
 					</aside>
 				</section>
 
 				<section>
-					<img src="img/web-logos.png" alt="">
+					<img class="light web-logo" src="img/web-logos.png" alt="">
 					<aside class="notes">
-						It's built fully in web technologies, with HTML, CSS, and Javascript. It's built ontop of Gecko, the same rendering engine in Firefox Desktop.
+						It's built fully in web technologies, with HTML, CSS, and Javascript. It's powered by Gecko, the same rendering engine in Firefox Desktop.
 					</aside>
 				</section>
 
@@ -113,13 +113,13 @@
 				</section>
 
 				<section>
-					<h3>$35 - Wow! Such price!</h3>
-					<img src="img/doge_many_cheap.png" alt="">
+					<h3>$35 smart phone</h3>
+					<img class="light" src="img/doge_many_cheap.png" alt="">
 				</section>
 
 				<section>
 					<h2>The Home Screen</h2>
-					<img src="img/hot_hot_homescreen.png" alt="">
+					<img class="light pimp-phone" src="img/hot_hot_homescreen.png" alt="">
 					<aside class="notes">
 						My talk today was originally about building the FirefoxOS home screen. Today I'm going to show you how to build a home screen, and make your phone your own. I was chosen to build the FirefoxOS home screen because I loved hacking on my phone. I was originally doing performance work for Mozilla, but I had done several demos of custom home screens for the device. For our 2.0 launch we shipped a fresh re-design which I helped with.
 					</aside>
@@ -127,17 +127,17 @@
 
 				<section>
 					<h3>1.0 - 1.4 home screen</h3>
-					<img src="img/home-screen-old.jpg" alt="">
+					<img height="600" class="light" src="img/home-screen-old.jpg" alt="">
 				</section>
 
 				<section>
 					<h3>Riverscreen - custom home screen</h3>
-					<img src="img/home-screen-river.jpg" alt="">
+					<img height="600" class="light" src="img/home-screen-river.jpg" alt="">
 				</section>
 
 				<section>
 					<h3>2.0 vertical home screen</h3>
-					<img src="img/home-screen-new.jpg" alt="">
+					<img height="600" class="light" src="img/home-screen-new.jpg" alt="">
 					<aside class="notes">
 						And here's our 2.0 vertical home screen. It's veritcally scrolling and has larger, more visual icons. Vertically scrolling important because of edge gestures.
 					</aside>
@@ -145,6 +145,10 @@
 
 				<section>
 					<h2>Replaceable Home Screens</h2>
+					<ul>
+						<li>Make your phone your own.</li>
+						<li>Upload your home screen to the marketplace.</li>
+					</ul>
 					<aside class="notes">
 						One of the great upcoming features in FirefoxOS is the concept of replaceable home screens. You can fully make your phone your own, by creating your own home screen in javascript. This is a feature we're currently working on and is expected to ship in our next release.
 					</aside>
@@ -152,10 +156,39 @@
 
 				<section>
 					<h2>How does it work?</h2>
-					<img src="img/gears.jpg" alt="">
+					<img class="light" src="img/gears.jpg" alt="">
 					<aside class="notes">
 						How does it all work? WebAPIs allow access to the hardware.
 					</aside>
+				</section>
+
+				<section>
+					<h2>What is an app anyway?</h2>
+					<div class="fragment">A website: &lt;html&gt;...&lt;/html&gt;</div>
+					<div class="fragment">A manifest: manifest.webapp</div>
+					<aside class="notes">
+						So what is an app? If you have a manifest, and a website, you can have an app. The manifest provides some metadata about your website, and can allow users to install it as an application. It lists the required permissions that your app needs as well as content such as icons and localized descriptions.
+					</aside>
+				</section>
+
+				<section>
+					<h2>Web Manifest</h2>
+					<pre><code class="json">
+{
+  "name": "My App",
+  "description": "My elevator pitch goes here",
+  "launch_path": "/index.html",
+  "icons": {
+    "512": "/img/icon-512.png",
+    "128": "/img/icon-128.png"
+  },
+  "developer": {
+    "name": "Your name or organization",
+    "url": "http://your-homepage-here.org"
+  },
+  "default_locale": "en"
+}
+</code></pre>
 				</section>
 
 				<section>
@@ -197,23 +230,15 @@ request.onsuccess = function(evt) {
 				</section>				
 
 				<section>
-					<img src="img/webapi.png" alt="">
+					<img class="light" src="img/webapi.png" alt="">
 				</section>
 
 				<section>
-					<img height="600" src="img/meme-what-if-i-told-you.png">
+					<img class="light" height="600" src="img/meme-what-if-i-told-you.png">
 				</section>
 
 				<section>
-					<img height="600" src="img/meme-brace-yourself-live-coding.png">
-				</section>
-
-				<section>
-					<img height="600" src="img/meme-firefox-it-do-it-live.png">
-				</section>
-
-				<section>
-					<img height="600" src="img/meme-insanity-wolf-live-coding.png">
+					<img class="light" height="600" src="img/meme-brace-yourself-live-coding.png">
 				</section>
 
 				<section>

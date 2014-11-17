@@ -20,6 +20,12 @@ img.none {
 	box-shadow: none !important;
 }
 
+img.pimp-phone,
+img.web-logo {
+	display: inline-block !important;
+	padding: 0 25px !important;
+}
+
 html.fxos-banner body .slide-background {
 	background: url(../img/fxos-banner-large.png) no-repeat;
 	background-size: cover;
